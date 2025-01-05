@@ -5,7 +5,7 @@ The file here contains results from the [MACAW](https://github.com/Devlin-Moyer/
 The test results shown here were obtained by the GitHub Actions run in:
 
 - **PR #954** (MACAW)
-- **PR #883** (gene essentiality)
+- **PR #954** (gene essentiality)
 
 The results will be updated by any subsequent pull request. Summary results are shown as a comment in the corresponding pull request.
 
