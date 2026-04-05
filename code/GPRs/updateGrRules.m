@@ -34,7 +34,7 @@ function [newModel] = updateGrRules(fileName,nHeaderLines,colNewGrRules,autoSave
 if nargin < 5
     load('HumanGEM.mat');  %load HumanGEM model if no input specified  
 else
-    ihuman = model;
+    humanGEM = model;
 end
 if nargin < 4
     autoSave = false;
@@ -61,19 +61,19 @@ rxnIDs = tmp{1};
 newGrRules = tmp{colNewGrRules};
 
 % Update curated grRules, rxnReferences, rxnConfidenceScores
-[~,rxn_ind] = ismember(rxnIDs,ihuman.rxns);
-ihuman.grRules(rxn_ind) = newGrRules;
+[~,rxn_ind] = ismember(rxnIDs,humanGEM.rxns);
+humanGEM.grRules(rxn_ind) = newGrRules;
 
 % Update other gene fields
-[genes,rxnGeneMat] = getGenesFromGrRules(ihuman.grRules);
-ihuman.genes = genes;
-ihuman.rxnGeneMat = rxnGeneMat;
+[genes,rxnGeneMat] = getGenesFromGrRules(humanGEM.grRules);
+humanGEM.genes = genes;
+humanGEM.rxnGeneMat = rxnGeneMat;
 
-newModel = ihuman;
+newModel = humanGEM;
 
 % Save changes to .mat model file
 if autoSave
-    exportHumanGEM(ihuman,'HumanGEM','../../',{'mat','yml'},false,false);
+    exportHumanGEM(humanGEM,'HumanGEM','../../',{'mat','yml'},false,false);
 end
 
 end
