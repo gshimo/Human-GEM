@@ -1,3 +1,7 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
 [project]
 name = "human-gem"
 version = "0.0.0"
@@ -23,5 +27,11 @@ curation = [
   "tqdm>=4.67,<5.0",
 ]
 
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
 [tool.uv]
-package = false
+package = true

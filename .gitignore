@@ -17,6 +17,7 @@ Thumbs.db
 __pycache__/
 .venv/
 .pytest_cache/
+*.egg-info/
 
 # Windows executable files
 *.exe
