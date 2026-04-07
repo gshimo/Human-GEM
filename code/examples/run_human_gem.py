@@ -10,8 +10,8 @@ from typing import Any
 
 import cobra
 from cobra.util.solver import linear_reaction_coefficients
-from src.utils.path import get_project_root
 
+from src.utils.path import get_project_root
 
 REPO_ROOT = get_project_root()
 DEFAULT_MODEL_PATH = REPO_ROOT / "model" / "Human-GEM.yml"
@@ -137,7 +137,9 @@ def main() -> int:
     top_flux_rows = build_top_flux_rows(model, solution, args.top)
     print(f"Top {len(top_flux_rows)} reactions by absolute flux:")
     for row in top_flux_rows:
-        print(f"  {row['reaction_id']:>8}  {row['flux']:>12.6f}  {row['reaction_name']}")
+        print(
+            f"  {row['reaction_id']:>8}  {row['flux']:>12.6f}  {row['reaction_name']}"
+        )
 
     if args.output_csv:
         output_path = args.output_csv.resolve()
