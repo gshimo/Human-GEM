@@ -58,6 +58,7 @@ If you want to work with Human-GEM in Python, you can use [`uv`](https://docs.as
 uv sync
 uv run python -c "import cobra; model = cobra.io.load_yaml_model('model/Human-GEM.yml'); print(model.id, len(model.reactions), len(model.metabolites), len(model.genes))"
 uv run python code/test/sanityCheck.py
+uv run python code/examples/run_human_gem.py --top 5
 ```
 
 The default environment includes the dependencies needed to load the model and run the main Python helper scripts in this repository.
