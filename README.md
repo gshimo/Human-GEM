@@ -51,6 +51,26 @@ If you want to use the model for your own model simulations, you can use any sof
 
 Please see the installation instructions for each software package.
 
+##### Python setup with uv
+If you want to work with Human-GEM in Python, you can use [`uv`](https://docs.astral.sh/uv/) to create a local virtual environment and install the required dependencies:
+
+```bash
+uv sync
+uv run python -c "import cobra; model = cobra.io.load_yaml_model('model/Human-GEM.yml'); print(model.id, len(model.reactions), len(model.metabolites), len(model.genes))"
+uv run python code/test/sanityCheck.py
+```
+
+The default environment includes the dependencies needed to load the model and run the main Python helper scripts in this repository.
+
+Optional dependency groups are also available:
+
+```bash
+uv sync --group test
+uv sync --group curation
+```
+
+Use the `test` group for `memote`, and the `curation` group for the auxiliary curation scripts that rely on packages such as `mysql-connector-python`, `pubchempy`, `rdkit`, and `tqdm`.
+
 ### Developer
 #### MATLAB-based  
 If you want to contribute to the development of Human-GEM, or otherwise want to run any of the [provided](https://github.com/SysBioChalmers/Human-GEM/tree/main/code) MATLAB functions, then the following software is required:
