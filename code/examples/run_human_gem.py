@@ -11,7 +11,7 @@ from typing import Any
 import cobra
 from cobra.util.solver import linear_reaction_coefficients
 
-from src.utils.path import get_project_root
+from utils.path import get_project_root
 
 REPO_ROOT = get_project_root()
 DEFAULT_MODEL_PATH = REPO_ROOT / "model" / "Human-GEM.yml"
