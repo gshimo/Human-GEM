@@ -8,6 +8,7 @@ This directory is organized as follows:
 
 ```
 code
+├── examples
 ├── GPRs
 ├── io
 ├── misc
@@ -19,6 +20,9 @@ code
 
 ### GPRs
 Functions related to gene-transcript-protein-reaction (GTPR) associations in the model. The functions primarily involve the Human-GEM `grRules` field, facilitating processes such as cleaning or simpliyfing the rules, or converting between gene, transcript, and protein IDs.
+
+### examples
+Small runnable examples for common tasks such as loading `model/Human-GEM.yml` with cobrapy and running a simple flux balance analysis (FBA).
 
 ### io
 Functions associated with input/output of files into and out of MATLAB, such as the yaml-formatted Human-GEM, or documentation of model changes.
@@ -39,5 +43,4 @@ Functions associated with the **t**ask‐driven **I**ntegrative **N**etwork **I*
 
 ### test
 Functions for testing purposes
-
 
